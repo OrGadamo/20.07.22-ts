@@ -438,3 +438,87 @@ class ComputerScreen extends Product {
       : "need to order";
   }
 }
+//47
+class Factory {
+  factoryName: string;
+  city: string;
+  numOfEmployee: number;
+  isApproved: boolean;
+  private isAutomation: boolean = true;
+  constructor(
+    factoryName: string,
+    city: string,
+    numOfEmployee: number,
+    isApproved: boolean
+  ) {
+    this.factoryName = factoryName;
+    this.city = city;
+    this.numOfEmployee = numOfEmployee;
+    this.isApproved = isApproved;
+  }
+  getFactoryDetails(): string {
+    return `Name: ${this.factoryName} City: ${this.city} Number Of Employees: ${this.numOfEmployee} Is Approved: ${this.isApproved}`;
+  }
+  get getIsAutomation(): boolean {
+    return this.isAutomation;
+  }
+  set setIsAuotomation(bool: boolean) {
+    this.isAutomation = bool;
+  }
+  static getFactoryMaxMinEmployee(
+    str: string = "up",
+    ...employeeArr: Factory[]
+  ) {
+    if (employeeArr) {
+      if (str == "down")
+        return employeeArr.sort(
+          (a: Factory, b: Factory) => a.numOfEmployee - b.numOfEmployee
+        )[0];
+      if (str == "up")
+        return employeeArr.sort(
+          (a: Factory, b: Factory) => b.numOfEmployee - a.numOfEmployee
+        )[0];
+    }
+    return "Error";
+  }
+}
+//48
+class TvWarehouse extends Factory {
+  numOfTv: number;
+  constructor(
+    factoryName: string,
+    city: string,
+    numOfEmployee: number,
+    isApproved: boolean,
+    numOfTv: number
+  ) {
+    super(factoryName, city, numOfEmployee, isApproved);
+    this.numOfTv = numOfTv;
+  }
+  getTvWarehouseDetails(): string {
+    return `${this.getFactoryDetails} Number Of Tvs: ${this.numOfTv}`;
+  }
+  getMessageByIsApproved(): string {
+    return this.isApproved ? "Approved" : "Request sent";
+  }
+}
+//49
+class SandwichFactory extends Factory {
+  isKosher: boolean;
+  constructor(
+    factoryName: string,
+    city: string,
+    numOfEmployee: number,
+    isApproved: boolean,
+    isKosher: boolean
+  ) {
+    super(factoryName, city, numOfEmployee, isApproved);
+    this.isKosher = isKosher;
+  }
+  getSandwichFactoryDetails(): string {
+    return `${this.getFactoryDetails} Is Kosher: ${this.isKosher}`;
+  }
+  getMessageByIsAutomation(): string {
+    return this.getIsAutomation ? "Is Automated" : "No Automation";
+  }
+}
