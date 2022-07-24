@@ -522,3 +522,25 @@ class SandwichFactory extends Factory {
     return this.getIsAutomation ? "Is Automated" : "No Automation";
   }
 }
+//50
+interface IUser {
+  f_name: string;
+  l_name: string;
+  date_of_birth: string;
+}
+class Human {
+  height: number;
+  country: string;
+  user: IUser;
+  constructor(_height: number, _country: string, _user: IUser) {
+    this.height = _height;
+    this.country = _country;
+    this.user = _user;
+  }
+}
+let or = new Human(1.73, "Israel", {
+  f_name: "Or",
+  l_name: "Gadamo",
+  date_of_birth: "16/11/1998",
+});
+// console.log(or);

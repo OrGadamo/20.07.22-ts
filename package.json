@@ -1,0 +1,23 @@
+{
+  "name": "20.07.22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrGadamo/20.07.22-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OrGadamo/20.07.22-ts/issues"
+  },
+  "homepage": "https://github.com/OrGadamo/20.07.22-ts#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
